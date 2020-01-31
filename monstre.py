@@ -33,6 +33,8 @@ class Monster :
                 self.monster_pos = (x, y-1)
             elif position@[1] > y :
                 self.monster_pos = (x, y+1)
+    def projectile(self, position):
+        return [(int(x * position[0] + (1-x) * self.monster_pos[0]), int(x * position[1] + (1-x) * self.monster_pos[1])) for x in np.arange(0, 1, 0.001)]
     #pour coder si le monstre croise un mur on peut utiliser le code de pierrot
    
         
