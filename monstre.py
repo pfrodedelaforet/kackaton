@@ -1,15 +1,15 @@
 from time import time
 
 class Monster :
-    def __init__(self, monster_pos, position):
-        self.position = position
+    def __init__(self, monster_pos, isinroom):
+        self.isinroom = isinroom
         self._monster_pos = monster_pos
     @property
     def monster_pos(self):
         return self._monster_pos
     @monster_pos.setter
     def monster_pos(self, newpos) : 
-        if len(newpos) == 2 and isinroom[newpos[0]][newpos[1]] : 
+        if len(newpos) == 2 and self.isinroom[newpos[0]][newpos[1]]==0 : 
             self._monster_pos = newpos
         else : 
             raise ValueError()
@@ -19,15 +19,15 @@ class Monster :
 
     def deplacement(self, position): #ce programme permet de faire déplacer le monstre jusqu'au
     #personnage
-        while self.monster_pos != position and not you_can_fight:
-            (x,y) = monster.monster_pos
+        while self.monster_pos != position and not self.you_can_fight(position):
+            (x,y) = self.monster_pos
             if position[0] <= x :
                 self.monster_pos = (x-10, y)
             elif position[0] > x :
                 self.monster_pos = (x+10, y)
             if position[1] <= y :
                 self.monster_pos = (x, y-10)
-            elif position@[1] > y :
+            elif position[1] > y :
                 self.monster_pos = (x, y+10)
     def projectile(self, position):
         return [(int(x * position[0] + (1-x) * self.monster_pos[0]), int(x * position[1] + (1-x) * self.monster_pos[1])) for x in np.arange(0, 1, 0.001)]
@@ -41,11 +41,11 @@ class Monster :
         for k in range(n):
             s = s + chr(97+randrange(26))
         return s
-white = (255, 255, 255) 
-green = (0, 255, 0) 
-blue = (0, 0, 128) 
-red = (255, 0, 0)
-yellow = (255, 255, 0)
+# white = (255, 255, 255) 
+# green = (0, 255, 0) 
+# blue = (0, 0, 128) 
+# red = (255, 0, 0)
+# yellow = (255, 255, 0)
     
     def fight(self, n = 0) : 
         t_0 = time.time()
