@@ -66,7 +66,9 @@ for x in range(BOARD_WIDTH):
         if carte[x,y] != 0 :
             screen.set_at((x, y), color[carte[x,y]] )
 
-
+for k in range(-10,10):
+    for j in range (-10,10):
+        screen.set_at((810+k,210+j), RED)
 
 while True:
     for event in pygame.event.get(): 
@@ -88,18 +90,18 @@ while True:
 ## SALLE 1
 # when joueur in salle 1 :
 
-# for k in range(0,10):
-#     for j in range (0,10):
-#         screen.set_at((200+k,200+j), RED)
+# for k in range(-10,10):
+#     for j in range (-10,10):
+#         screen.set_at((210+k,210+j), RED)
 
-### SALLE 2 
+# ### SALLE 2 
 
-# for k in range(0,20):
-#     for j in range (0,20):
-#         screen.set_at((800+k,200+j), RED)
+# for k in range(-10,10):
+#     for j in range (-10,10):
+#         screen.set_at((810+k,210+j), RED)
 
-### SALLE 3
+# ### SALLE 3
 
-# for k in range(0,20):
-#     for j in range (0,20):
-#         screen.set_at((800+k,700+j), RED)
+# for k in range(-10,10):
+#     for j in range (-10,10):
+#         screen.set_at((810+k,610+j), RED)
