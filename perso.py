@@ -38,12 +38,11 @@ class Perso :
         return self._pos
     @pos.setter 
     def pos(self, position):
-        
-        if len(position) == 2 and isinroom[position[0]][position[1]] != 0 and (self.pos[0]-position[0])**2 + (self.pos[1]-position[1])**2: 
+        if len(position) == 2 and isinroom[position[0]][position[1]] == 0: 
             self._pos = position
         elif len(position) != 2 :  
             raise TypeError("c'est pas une position")
-        elif isinroom[position[0]][position[1]] == 0 :  
+        elif isinroom[position[0]][position[1]] != 0 :  
             raise ValueError("il est pas dans la salle")
 
 """{pygame.K_a : 'a', pygame.K_b : 'b', pygame.K_c : 'c', pygame.K_d : 'd', pygame.K_e : 'e',

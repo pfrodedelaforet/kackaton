@@ -3,7 +3,7 @@ import pygame
 from random import randrange 
 from itertools import product
 import numpy as np
-
+import time
 class generate_salle:
   def __init__(self,coordonnées,name):
     self.a=coordonnées[0]
@@ -82,6 +82,10 @@ L = monster.projectile(perso.pos)
 for x in L : 
     if isinroom[x[0]][x[1]] : 
         screen.set_at((x[0], x[1]), BROWN)
+        if perso.pos == x : 
+            perso.reward()
+        time.delay(0.5)
+
 """c'était l'envoi du projectile"""
 for k in range(-10,10):
     for j in range (-10,10):
