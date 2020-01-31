@@ -46,29 +46,40 @@ YELLOW = (255, 255, 0)
 GREY = (142, 162, 198)
 RED = (255,0,0)
 BLUE=(0,0,255)
+BROWN = (150, 75, 0)
 
 clock = pygame.time.Clock()
 
 BOARD_SIZE = (1000, 1000)
 BOARD_WIDTH, BOARD_HEIGHT = BOARD_SIZE
 
-color = {1 : RED, 2 : YELLOW } #dico couleur
+color = {1 : WHITE, 2 : YELLOW } #dico couleur
 
 
 pygame.init()
 
 screen = pygame.display.set_mode(BOARD_SIZE)
 
-screen.fill(GREY)
+screen.fill(BLACK)
 
-for x in range(1000):
-    for y in range(1500):
+for x in range(BOARD_WIDTH):
+    for y in range(BOARD_HEIGHT):
         if carte[x,y] != 0 :
             screen.set_at((x, y), color[carte[x,y]] )
 
+def proj_aff(monster, position):
+    L = monster.projectile(position)
+    for x in L : 
+        if isinroom[x[0]][x[1]] : 
+            screen.set_at((x[0], x[1]), BROWN)
+
+for k in range(-10,10):
+    for j in range (-10,10):
+        screen.set_at((810+k,210+j), RED)
+
 while True:
-    for event in pygame.event.get():
-        if event.type== pygame.QUIT:
+    for event in pygame.event.get(): 
+        if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
     pygame.display.update()
@@ -83,5 +94,21 @@ while True:
 #     pygame.display.update()
 
 
+## SALLE 1
+# when joueur in salle 1 :
 
+# for k in range(-10,10):
+#     for j in range (-10,10):
+#         screen.set_at((210+k,210+j), RED)
 
+# ### SALLE 2 
+
+# for k in range(-10,10):
+#     for j in range (-10,10):
+#         screen.set_at((810+k,210+j), RED)
+
+# ### SALLE 3
+
+# for k in range(-10,10):
+#     for j in range (-10,10):
+#         screen.set_at((810+k,610+j), RED)
