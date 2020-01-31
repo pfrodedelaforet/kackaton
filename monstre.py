@@ -14,10 +14,6 @@ class Monster :
         else : 
             raise ValueError()
 
-    def random_monster(self, position):
-        monster = randrange(BOARD_WIDTH), randrange(BOARD_HEIGHT)
-        return monster if monster!=position and salle(monstre) == salle(position) and if 
-        (monster[0]-position[0])**2 + (monster[1] - position[1])**2 <= 8 else random_monster(position)
     def you_can_fight(self, position):
         return (self.monster_pos[0]-position[0])**2 + (self.monster_pos[1]-position[1])**2 <= 10
 
