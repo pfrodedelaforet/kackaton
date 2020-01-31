@@ -70,14 +70,28 @@ for k in range(-10,10):
     for j in range (-10,10):
         screen.set_at((810+k,210+j), RED)
 
-while True:
-    for event in pygame.event.get(): 
+# while True:
+#     for event in pygame.event.get(): 
+#         if event.type == pygame.QUIT:
+#             pygame.quit()
+#             sys.exit()
+#     pygame.display.update()
+
+while running:
+    for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-    pygame.display.update()
-
-
+            running = False   
+        elif event.type == pygame.KEYDOWN:
+            if event.key == K_q:
+                running = False
+            elif event.key == K_UP:
+                dx, dy = (0, -1)
+            elif event.key == K_RIGHT:
+                dx, dy = (1, 0)
+            elif event.key == K_DOWN:
+                dx, dy = (0, 1)
+            elif event.key == K_LEFT:
+                dx, dy = (-1, 0)
 
 # def draw_cell(carte, color):
 #     for x, y in product(range(BOARD_WIDTH), range(BOARD_HEIGHT)):
