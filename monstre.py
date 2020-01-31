@@ -15,7 +15,7 @@ class Monster :
             raise ValueError()
 
     def you_can_fight(self, position):
-        return (self.monster_pos[0]-position[0])**2 + (self.monster_pos[1]-position[1])**2 <= 10
+        return (self.monster_pos[0]-position[0])**2 + (self.monster_pos[1]-position[1])**2 <= 30
 
     def deplacement(self, position): #ce programme permet de faire déplacer le monstre jusqu'au
     #personnage
