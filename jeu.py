@@ -46,6 +46,7 @@ YELLOW = (255, 255, 0)
 GREY = (142, 162, 198)
 RED = (255,0,0)
 BLUE=(0,0,255)
+BROWN = (150, 75, 0)
 
 clock = pygame.time.Clock()
 
@@ -66,6 +67,11 @@ for x in range(BOARD_WIDTH):
         if carte[x,y] != 0 :
             screen.set_at((x, y), color[carte[x,y]] )
 
+def proj_aff(monster, position):
+    L = monster.projectile(position)
+    for x in L : 
+        if isinroom[x[0]][x[1]] : 
+            screen.set_at((x[0], x[1]), BROWN)
 
 
 while True:
