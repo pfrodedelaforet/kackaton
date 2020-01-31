@@ -4,6 +4,7 @@ class Perso :
         self.pdv = pdv
         self.armure = armure
         self.moulah = moulah
+        self.insalle=1
    
     def depl(delta_x, delta_y): 
         (x, y) = self.pos
@@ -19,6 +20,14 @@ class Perso :
     def buy_pdv(self, coin):
         self.moulah -= coin
         self.pdv += coin//10
+    
+    def quellesalle(self,salle1,salle2,salle3):
+        if salle1.c[0]<=self.pos[0]<=salle1.a[0] and salle1.a[1]<=self.pos[1]<=salle1.c[1]:
+            self.insalle=1
+        elif salle2.c[0]<=self.pos[0]<=salle2.a[0] and salle2.a[1]<=self.pos[1]<=salle2.c[1]:
+            self.insalle=2        
+        elif salle3.c[0]<=self.pos[0]<=salle3.a[0] and salle3.a[1]<=self.pos[1]<=salle3.c[1]:
+            self.insalle=3
     
     def buy_armure(self, coin):
         self.moulah -= coin
@@ -43,3 +52,5 @@ class Perso :
  pygame.K_p : 'p', pygame.K_q : 'q', pygame.K_r : 'r', pygame.K_s : 's', pygame.K_t : 't',
  pygame.K_u : 'u', pygame.K_v : 'v', pygame.K_w : 'w', pygame.K_x : 'x', pygame.K_y : 'y', 
  pygame.K_z : 'z'}"""
+
+
