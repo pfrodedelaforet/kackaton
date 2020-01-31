@@ -15,20 +15,20 @@ class Monster :
             raise ValueError()
 
     def you_can_fight(self, position):
-        return (self.monster_pos[0]-position[0])**2 + (self.monster_pos[1]-position[1])**2 <= 10
+        return (self.monster_pos[0]-position[0])**2 + (self.monster_pos[1]-position[1])**2 <= 30
 
     def deplacement(self, position): #ce programme permet de faire déplacer le monstre jusqu'au
     #personnage
         while self.monster_pos != position and not you_can_fight:
             (x,y) = monster.monster_pos
             if position[0] <= x :
-                self.monster_pos = (x-1, y)
+                self.monster_pos = (x-10, y)
             elif position[0] > x :
-                self.monster_pos = (x+1, y)
-            elif position[1] <= y :
-                self.monster_pos = (x, y-1)
+                self.monster_pos = (x+10, y)
+            if position[1] <= y :
+                self.monster_pos = (x, y-10)
             elif position@[1] > y :
-                self.monster_pos = (x, y+1)
+                self.monster_pos = (x, y+10)
     def projectile(self, position):
         return [(int(x * position[0] + (1-x) * self.monster_pos[0]), int(x * position[1] + (1-x) * self.monster_pos[1])) for x in np.arange(0, 1, 0.001)]
     #pour coder si le monstre croise un mur on peut utiliser le code de pierrot
@@ -52,7 +52,7 @@ yellow = (255, 255, 0)
         s= generator(6)
         font = pygame.font.Font('freesansbold.ttf', 32)
         text = font.render(s, True, green, blue)
-        textRect.center = (1500 // 2, 1000 // 2) 
+        textRect.center = (1000 // 2, 1000 // 2) 
         #il faut fermer la fenetre?
         i=0; win = True
         while time.time()-t_0 < 4 and i<6:
@@ -63,8 +63,8 @@ yellow = (255, 255, 0)
             i += 1
         if win == False : 
             font = pygame.font.Font('freesansbold.ttf', 32)
-            text = font.render('WRONG', True, red, yellow)
-            textRect.center = (1500 // 2, 1000 // 2)
+            text = font.render('LOSER', True, red, yellow)
+            textRect.center = (1000 // 2, 1000 // 2)
             n+=1
             fight(n)
         else : 
