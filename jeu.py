@@ -52,14 +52,14 @@ clock = pygame.time.Clock()
 BOARD_SIZE = (1500, 1000)
 BOARD_WIDTH, BOARD_HEIGHT = BOARD_SIZE
 
-color = {1 : RED, 2 : YELLOW } #dico couleur
+color = {1 : WHITE, 2 : YELLOW } #dico couleur
 
 
 pygame.init()
 
 screen = pygame.display.set_mode(BOARD_SIZE)
 
-screen.fill(GREY)
+screen.fill(BLACK)
 
 for x in range(1000):
     for y in range(1500):
@@ -67,8 +67,8 @@ for x in range(1000):
             screen.set_at((x, y), color[carte[x,y]] )
 
 while True:
-    for event in pygame.event.get():
-        if event.type== pygame.QUIT:
+    for event in pygame.event.get(): 
+        if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
     pygame.display.update()
