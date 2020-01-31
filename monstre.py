@@ -13,10 +13,17 @@ class Monster :
             self._monster_pos = newpos
         else : 
             raise ValueError()
-        
+
+    def random_monster(self, position):
+        monster = randrange(BOARD_WIDTH), randrange(BOARD_HEIGHT)
+        return monster if monster!=position and salle(monstre) == salle(position) and if 
+        (monster[0]-position[0])**2 + (monster[1] - position[1])**2 <= 8 else random_monster(position)
+    def you_can_fight(self, position):
+        return (self.monster_pos[0]-position[0])**2 + (self.monster_pos[1]-position[1])**2 <= 10
+
     def deplacement(self, position): #ce programme permet de faire déplacer le monstre jusqu'au
     #personnage
-        while self.monster_pos != position:
+        while self.monster_pos != position and not you_can_fight:
             (x,y) = monster.monster_pos
             if position[0] <= x :
                 self.monster_pos = (x-1, y)
@@ -41,10 +48,8 @@ green = (0, 255, 0)
 blue = (0, 0, 128) 
 red = (255, 0, 0)
 yellow = (255, 255, 0)
-    def if_fight(position):
-
-    def fight(n = 0) :
-        #if_fight== True
+    
+    def fight(self, n = 0) : 
         t_0 = time.time()
         s= generator(6)
         font = pygame.font.Font('freesansbold.ttf', 32)
@@ -66,7 +71,7 @@ yellow = (255, 255, 0)
             fight(n)
         else : 
             return n 
-            #fermer les pages
+        
             
     
         
