@@ -61,10 +61,12 @@ screen = pygame.display.set_mode(BOARD_SIZE)
 
 screen.fill(BLACK)
 
-for x in range(1000):
-    for y in range(1500):
+for x in range(BOARD_WIDTH):
+    for y in range(BOARD_HEIGHT):
         if carte[x,y] != 0 :
             screen.set_at((x, y), color[carte[x,y]] )
+
+
 
 while True:
     for event in pygame.event.get(): 
@@ -83,5 +85,21 @@ while True:
 #     pygame.display.update()
 
 
+## SALLE 1
+# when joueur in salle 1 :
 
+# for k in range(0,10):
+#     for j in range (0,10):
+#         screen.set_at((200+k,200+j), RED)
 
+### SALLE 2 
+
+# for k in range(0,20):
+#     for j in range (0,20):
+#         screen.set_at((800+k,200+j), RED)
+
+### SALLE 3
+
+# for k in range(0,20):
+#     for j in range (0,20):
+#         screen.set_at((800+k,700+j), RED)
