@@ -13,11 +13,6 @@ class Monster :
             self._monster_pos = newpos
         else : 
             raise ValueError()
-
-    def random_monster(self, position):
-        monster = randrange(BOARD_WIDTH), randrange(BOARD_HEIGHT)
-        return monster if monster!=position and if salle(monstre) == salle(position) and if 
-        (monster[0]-position[0])**2 + (monster[1] - position[1])**2 <= 8 else random_monster(position)
         
     def deplacement(self, position): #ce programme permet de faire déplacer le monstre jusqu'au
     #personnage
