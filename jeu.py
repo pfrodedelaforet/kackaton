@@ -25,13 +25,13 @@ class gener_carte:
   
   def __init__(self,taille):
     self.carte=np.zeros(taille)
-    salle1=generate_salle(((20,20),(20,150),(200,20),(200,150)),1)
-    salle2=generate_salle(((500,500),(500,800),(800,500),(800,800)),2)
-    salle3=generate_salle(((50,1000),(50,1400),(300,1000),(300,1400)),3)
-    salle4=generate_salle(((700,30),(700,200),(950,30),(950,200)),4)
+    salle1=generate_salle(((20,20),(20,450),(450,20),(450,450)),1)
+    salle2=generate_salle(((500,500),(500,900),(900,500),(900,900)),2)
+    #salle3=generate_salle(((50,1000),(50,1400),(300,1000),(300,1400)),3)
+    salle4=generate_salle(((600,30),(600,300),(980,30),(980,300)),4)
     self.actualisercarte(salle1)
     self.actualisercarte(salle2)
-    self.actualisercarte(salle3)
+    #self.actualisercarte(salle3)
     self.actualisercarte(salle4)
 
 taille=(1000,1500)
@@ -49,7 +49,7 @@ BLUE=(0,0,255)
 
 clock = pygame.time.Clock()
 
-BOARD_SIZE = (1500, 1000)
+BOARD_SIZE = (1000, 1000)
 BOARD_WIDTH, BOARD_HEIGHT = BOARD_SIZE
 
 color = {1 : WHITE, 2 : YELLOW } #dico couleur
