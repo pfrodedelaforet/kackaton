@@ -16,17 +16,18 @@ class Perso :
             self.armure += value
         if rewardtype == 'potion':
             self.pdv += value
+    
 
     @property
     def pos(self):
         return self._pos
     @pos.setter 
     def pos(self, position):
-        if len(position) == 2 and isinroom[position[0]][position[1]]: 
+        if len(position) == 2 and isinroom[position[0]][position[1]] != 0: 
             self._pos = position
         elif len(position) != 2 :  
             raise TypeError("c'est pas une position")
-        elif not isinroom[position[0]][position[1]] : 
+        elif isinroom[position[0]][position[1]] == 0:  
             raise ValueError("il est pas dans la salle")
 
     
