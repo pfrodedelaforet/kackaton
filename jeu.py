@@ -66,13 +66,12 @@ for x in range(BOARD_WIDTH):
     for y in range(BOARD_HEIGHT):
         if carte[x,y] != 0 :
             screen.set_at((x, y), color[carte[x,y]] )
-
-def proj_aff(monster, position):
-    L = monster.projectile(position)
-    for x in L : 
-        if isinroom[x[0]][x[1]] : 
-            screen.set_at((x[0], x[1]), BROWN)
-
+""" le monstre envoie un projectile,scenario """
+L = monster.projectile(perso.pos)
+for x in L : 
+    if isinroom[x[0]][x[1]] : 
+        screen.set_at((x[0], x[1]), BROWN)
+"""c'était l'envoi du projectile"""
 for k in range(-10,10):
     for j in range (-10,10):
         screen.set_at((810+k,210+j), RED)
